@@ -4,47 +4,45 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Simple Calculator
-  link(rel='stylesheet' href='Bootstraps/css/bootstrap.css')
-  link(rel='stylesheet' href='style.css')
+  link(rel='stylesheet' href='./Bootstraps/css/bootstrap.css')
+  link(rel='stylesheet' href='./style.css')
 .container-fluid
   .row
     .col-sm-4
-    .col-sm-4
+    .col-sm-4.cardCol
       .card
-        h3 Simple Calc v1.1
+        h3 Simple Calc v1.2
         .card-body
           b
             p#result
           .container
             .row
-              .col-sm-3.ps-0.pe-0
+              .col-sm-4.inputCol
                 label.inputlabel(for='num1') First Input:
                 br
-                input#num1(type='number' placeholder='Number')
-              .col-sm-6.operand
-                label(for='btn') Operand:
-                br
-                .row
-                  // <div class="col-sm-2"></div>
-                  .col-sm-2.offset-2.me-2
-                    .row
-                      button.btn(onclick='addNumbers()')
-                        | +
-                      button.btn(onclick='subtractNumbers()')
-                        | -
-                  .col-sm-2
-                    .row
-                      button.btn(onclick='multiplyNumbers()')
-                        | *
-                      button.btn(onclick='divideNumbers()')
-                        | /
-                  .col-sm-3.ps-1.pe-0
-                    button.btn.pt-1.ps-2.pe-2.pb-1.ms-2.mt-4(onclick='clearScreen()')
-                      | AC
-              .col-sm-3.ps-0.pe-0
+                input#num1(type='number')
+              .col-sm-4.inputCol
+                p#operand
+              .col-sm-4.inputCol
                 label.inputlabel(for='num2') Second Input:
                 br
-                input#num2(type='number' placeholder='Number')
+                input#num2(type='number')
+            .row
+              .col-sm-12.operandSelect
+                .row
+                  .col
+                    label(for='btn') Select Operator:
+                    br
+                    button#addition.btn(onclick='addNumbers()')
+                      | +
+                    button#subtraction.btn(onclick='subtractNumbers()')
+                      | -
+                    button#multiplication.btn(onclick='multiplyNumbers()')
+                      | *
+                    button#division.btn(onclick='divideNumbers()')
+                      | /
+                    button.btn(onclick='clearScreen()')
+                      | AC
     .col-sm-4
 footer GROUP 1: Alinda, Wilfred, Dominic, Richard, Gerald.
 script(src='./Bootstraps/js/bootstrap.js')
